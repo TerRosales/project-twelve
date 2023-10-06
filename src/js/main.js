@@ -101,57 +101,6 @@ $(document).ready(function() {
             hint: "Also squeezes our content making them adapt a smaller size when this property exceeds the content's size threshold"
         },
         ]; 
-
-
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-};
-function displayRandomQuestion() {
-    // Shuffle the questions array
-    shuffleArray(questions);
-
-    // Get a random question from the shuffled array
-    const randomQuestion = questions[0];
-
-    // Display the question and answers in the HTML using jQuery
-    $(".question-text").text(randomQuestion.question);
-
-    const answersList = $(".answers-list");
-    const answers = [randomQuestion.answers, ...questions.slice(1, 4).map(q => q.answer)];
-    shuffleArray(answers);
-
-    // Clear the previous answers
-    answersList.empty();
-
-        randomQuestion.answers = [randomQuestion.answer, ...questions.slice(1, 4).map(q => q.answer)];
-        shuffleArray(randomQuestion.answers);
-
-        $.each(randomQuestion.answers, function(index, answer) {
-            const li = $("<li>").text(answer);
-            answersList.append(li);
-
-            // Add a click event handler for each answer
-            li.click(function() {
-                // Check if the selected answer is correct
-                const selectedAnswer = answer;
-                if (selectedAnswer === randomQuestion.correctAnswer) {
-                    alert("Correct!"); // You can replace this with your desired feedback mechanism
-                } else {
-                    alert("Incorrect!"); // You can replace this with your desired feedback mechanism
-                }
-
-                // Display a new random question after the user selects an answer
-                displayRandomQuestion();
-});
-
-displayRandomQuestion();
-
-// Add a click event handler for the randomize button
-$(".randomize-button").click(function() {
-    displayRandomQuestion();
-});
+        
 
 });
