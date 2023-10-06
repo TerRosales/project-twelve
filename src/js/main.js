@@ -1,8 +1,8 @@
 $(document).ready(function() {
-    var quizData = [
+    const questions = [
         {
             question: "Who is the creator of JQuery?",
-            answers:["Arnold Query",
+            answer:["Arnold Query",
                     "Jarin Besiz",
                     "Chapierre Quebali",
                     "John Resig"],
@@ -11,7 +11,7 @@ $(document).ready(function() {
         },
         {
             question: `Let's go back to the beggining of our class! When was first website created?`,
-            answers:[ "July 18, 1998",
+            answer:[ "July 18, 1998",
                         "September 12, 1958",
                         "January 12, 1989",
                         "March 12, 1989"],
@@ -21,7 +21,7 @@ $(document).ready(function() {
         },
         {
             question: `how do we declare a variable in Javascript?`,
-            answers: ["<variable>Object</variable>",
+            answer: ["<variable>Object</variable>",
                         "$variable: Object;",
                         "var(--Object);",
                         "var variableName = {Object};"],
@@ -30,7 +30,7 @@ $(document).ready(function() {
         },
         {
             question: "how do we declare a variable in HTML?",
-            answers:[ "$variable: Object;" ,
+            answer:[ "$variable: Object;" ,
                         "<variable>Object</variable>",
                         "var(--Object);",
                         "None of the above."],
@@ -39,16 +39,16 @@ $(document).ready(function() {
         },
         {
             question: "What are ::before and ::after pseudo-elements do in CSS?",
-            answers: ["The ::before and ::after pseudo-elements selector allows you to select one or more elements based on their source order, according to a formula.",
+            answer: ["The ::before and ::after pseudo-elements selector allows you to select one or more elements based on their source order, according to a formula.",
             `The ::before and ::after pseudo-elements selects elements when the mouse cursor is current over them. It’s commonly associated with link (<a>) elements.`,
             "The ::before and ::after pseudo-elements matches an element with invalid contents. For example, an input element with type 'email' with a name entered.",
             "The ::before and ::after pseudo-elements in CSS allows you to insert content onto a page without it needing to be in the HTML."],
             correctAnswer: "The ::before and ::after pseudo-elements in CSS allows you to insert content onto a page without it needing to be in the HTML.",
-            hint: "No hints for this one use GOOGLE! you might learn a thing or two about the wrong answers"
+            hint: "No hints for this one but you can use GOOGLE! you might learn a thing or two about the wrong answers"
         },
         {
             question: "Who is the father of computers?",
-            answers: ["Brittney Cergio",
+            answer: ["Brittney Cergio",
                         "Alexander Windows",
                         "Percy Computero",
                         "Charles Babbage"],
@@ -100,5 +100,58 @@ $(document).ready(function() {
             correctAnswer: "It allows us to target the space within the element",
             hint: "Also squeezes our content making them adapt a smaller size when this property exceeds the content's size threshold"
         },
-        ]
+        ]; 
+
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+};
+function displayRandomQuestion() {
+    // Shuffle the questions array
+    shuffleArray(questions);
+
+    // Get a random question from the shuffled array
+    const randomQuestion = questions[0];
+
+    // Display the question and answers in the HTML using jQuery
+    $(".question-text").text(randomQuestion.question);
+
+    const answersList = $(".answers-list");
+    const answers = [randomQuestion.answers, ...questions.slice(1, 4).map(q => q.answer)];
+    shuffleArray(answers);
+
+    // Clear the previous answers
+    answersList.empty();
+
+        randomQuestion.answers = [randomQuestion.answer, ...questions.slice(1, 4).map(q => q.answer)];
+        shuffleArray(randomQuestion.answers);
+
+        $.each(randomQuestion.answers, function(index, answer) {
+            const li = $("<li>").text(answer);
+            answersList.append(li);
+
+            // Add a click event handler for each answer
+            li.click(function() {
+                // Check if the selected answer is correct
+                const selectedAnswer = answer;
+                if (selectedAnswer === randomQuestion.correctAnswer) {
+                    alert("Correct!"); // You can replace this with your desired feedback mechanism
+                } else {
+                    alert("Incorrect!"); // You can replace this with your desired feedback mechanism
+                }
+
+                // Display a new random question after the user selects an answer
+                displayRandomQuestion();
+});
+
+displayRandomQuestion();
+
+// Add a click event handler for the randomize button
+$(".randomize-button").click(function() {
+    displayRandomQuestion();
+});
+
 });
