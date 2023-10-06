@@ -38,6 +38,6 @@ ul li {
   margin-bottom: 3rem;
 }
 
-.options {
-  display: none;
+.crossed-out {
+  text-decoration: line-through;
 }/*# sourceMappingURL=main.css.map */
