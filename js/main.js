@@ -177,7 +177,7 @@ $(document).ready(function() {
     $(".randomize-button").click(function() {
         var $backgroundContainer = $('body');
         var randomImage = images[Math.floor(Math.random() * images.length)];
-        var imagePath = '/src/assets/' + randomImage;
+        var imagePath = 'assets' + randomImage;
 
         $backgroundContainer.css('background-image', 'url(' + imagePath + ')');
     });
