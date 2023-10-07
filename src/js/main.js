@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $(".container").fadeIn(1000);
     const questions = [
         {
             question: "Who is the creator of JQuery?",
@@ -59,7 +60,7 @@ $(document).ready(function() {
             answer: ["Adding functionalities to websites",
                     "Assigning mark-up structure for our websites",
                     "Creating sitemaps and wireframes for our websites",
-                    "Managing style properties for our websites"],
+                    "Managing our websites's HTML element's style properties for our websites"],
             correctAnswer: "Managing our websites's HTML element's style properties for our websites",
             hint: `CSS stands for "Cascading Style Sheets".`
         },
@@ -91,7 +92,7 @@ $(document).ready(function() {
             hint: "We learned how to use one of these tools (WordPress)."
         },
         {
-            question: "In CSS what does the padding property target?",
+            question: "In CSS what space does the padding property target?",
             answer: ["It targets the border size of the content within the element.",
                     "It targets the space outside of the element that no other elements can enter.",
                     "It allows us to move our elements on its Y-axis",
@@ -132,14 +133,16 @@ $(document).ready(function() {
                 const clickedAnswer = $(this);
                 const correctAnswer = currentQuestion.correctAnswer;
                 correctAnswered = true;
+                clickedAnswer.css("transform", "scale(1.12)")
                 if (clickedAnswer.text() === correctAnswer) {
                     clickedAnswer.addClass("crossed-out"); 
-                    alert("Correct!");
+                    clickedAnswer.css("color", "rgba(200, 255, 200, 0.9)");
                     $("#randomize-button").prop("disabled", false);
                     correctAnswered = false;
                 } else {
+                    clickedAnswer.css("color", "rgba(255, 100, 100, 0.9)");
                     clickedAnswer.addClass("crossed-out");
-                    alert("Incorrect!");
+                    
                     correctAnswered = true;
                 }
             });
@@ -152,5 +155,40 @@ $(document).ready(function() {
     displayRandomQuestion();
 
     $(".randomize-button").click(displayRandomQuestion);
+
+$(document).ready(function() {
+        var images = [
+            'img-01.jpg',
+            'img-02.jpg',
+            'img-03.jpg',
+            'img-04.jpg',
+            'img-05.jpg',
+            'img-06.jpg',
+            'img-07.jpg',
+            'img-08.jpg',
+            'img-09.jpg',
+            'img-10.jpg',
+            ];
+    $(".randomize-button").click(function() {
+        var $backgroundContainer = $('body');
+        var randomImage = images[Math.floor(Math.random() * images.length)];
+        var imagePath = '/src/assets/' + randomImage;
+
+        $backgroundContainer.css('background-image', 'url(' + imagePath + ')');
+    });
+    $(".main-title").click(function() {
+        $(".main-title").animate({
+            margin: "2% 26%",
+            width: "50%",
+            borderRadius: "1rem"},700).animate({
+            margin: "2% 2%",
+            width: "96%",
+            fontSize: "3.5rem",
+            height: "8%",
+            borderRadius: "2rem"}, 800)
+        $(".quiz-container").slideToggle(1650)
+    });
 });
+
+})
 

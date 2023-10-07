@@ -1,33 +1,30 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  background-image: url("https://images.unsplash.com/photo-1696240547240-af6ae0c64953?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: rgba(255, 80, 255, 0.7);
+.container {
+  display: none;
 }
 
 .quiz-container {
-  background-color: #030303;
+  background-color: rgba(250, 230, 250, 0.27);
   margin: 14% auto;
   height: 23.5rem;
   width: 45%;
-  padding: 1.5rem;
+  padding: 1rem;
+  display: none;
+  border-radius: 2rem;
+  border: 2px ridge rgba(100, 100, 100, 0.9);
+  width: 43rem;
+  height: 33rem;
+  overflow-y: scroll;
 }
 
 p {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.8rem;
   color: #030303;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  background-color: rgba(255, 220, 255, 0.9);
+  background-color: rgba(200, 255, 200, 0.9);
+  border-radius: 2rem;
+  border: 2px ridge rgba(100, 100, 100, 0.9);
 }
 
 ul {
@@ -36,12 +33,55 @@ ul {
 }
 
 ul li {
+  border-radius: 2rem;
+  border: 2px ridge rgba(100, 100, 100, 0.9);
+  background-color: rgba(200, 255, 255, 0.5);
+  color: rgba(2, 2, 2, 0.9);
+  font-weight: 600;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
 }
 
-.next-button {
+.randomize-button {
   margin-top: 1.5rem;
   margin-bottom: 3rem;
+  border-radius: 2rem;
+  width: 10rem;
+  height: 3rem;
+  border: 2px ridge rgba(100, 100, 100, 0.9);
+  background-color: rgba(200, 255, 200, 0.9);
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.main-title {
+  margin: 37% 30%;
+  background-color: rgba(250, 255, 250, 0.6);
+  width: 40%;
+  border-radius: 2rem;
+  border: 2px ridge rgba(100, 100, 100, 0.9);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Arvo", "Josefin Sans", sans-serif;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-image: url("/src/assets/img-03.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: black;
+  transition: all 400ms ease-in;
+  opacity: 1;
 }
 
 .crossed-out {
