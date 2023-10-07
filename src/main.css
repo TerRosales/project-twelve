@@ -1,39 +1,41 @@
-<<<<<<< HEAD
+.crossed-out {
+  text-decoration: line-through;
+}
+
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(200, 255, 200, 0.6); /* Color of the thumb (the draggable part of the scrollbar) */
+  border-radius: 6px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(200, 255, 200, 0.9); /* Color of the thumb on hover */
+}
+
+.entries {
+  font-size: 1.5rem;
+}
+
 .container {
   display: none;
-=======
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-.custom-alert {
-  display: none;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  background-image: url("https://images.unsplash.com/photo-1696240547240-af6ae0c64953?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: rgba(255, 80, 255, 0.7);
->>>>>>> 175a26675493556da402dfd4bcd6e31905d59ef6
 }
 
 .quiz-container {
   background-color: rgba(250, 230, 250, 0.27);
-  margin: 14% auto;
+  margin: 10% auto;
   height: 23.5rem;
   width: 45%;
-  padding: 1rem;
+  padding: 2rem;
   display: none;
   border-radius: 2rem;
   border: 2px ridge rgba(100, 100, 100, 0.9);
   width: 43rem;
   height: 33rem;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 p {
@@ -59,11 +61,21 @@ ul li {
   color: rgba(2, 2, 2, 0.9);
   font-weight: 600;
   font-size: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+ul li:hover {
+  border-radius: 2rem;
+  border: 2px ridge rgba(100, 100, 100, 0.9);
+  background-color: rgba(200, 255, 200, 0.9);
+  color: rgba(2, 2, 2, 0.9);
+  font-weight: 600;
+  font-size: 1rem;
+  transform: scale(1.1);
 }
 
 .randomize-button {
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   margin-bottom: 3rem;
   border-radius: 2rem;
   width: 10rem;
@@ -86,6 +98,10 @@ ul li {
   box-sizing: border-box;
 }
 
+.custom-alert {
+  display: none;
+}
+
 html, body {
   font-family: "Arvo", "Josefin Sans", sans-serif;
   overflow: hidden;
@@ -102,8 +118,4 @@ html, body {
   color: black;
   transition: all 400ms ease-in;
   opacity: 1;
-}
-
-.crossed-out {
-  text-decoration: line-through;
 }/*# sourceMappingURL=main.css.map */

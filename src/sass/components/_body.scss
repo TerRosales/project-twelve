@@ -1,4 +1,21 @@
 @use '../partials/variables.scss' as *;
+// ScrollBar Properties 
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(200, 255, 200, 0.6); /* Color of the thumb (the draggable part of the scrollbar) */
+    border-radius: 6px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(200, 255, 200, 0.9); /* Color of the thumb on hover */
+}
+
+.entries {
+    font-size: 1.5rem;
+}
 
 .container{
     display: none;
@@ -6,14 +23,15 @@
 
 .quiz-container {
     background-color: rgba(250, 230, 250, 0.27);
-    margin: 14% auto;
+    margin: 10% auto;
     height: 23.5rem; width: 45%;
-    padding: 1rem;
+    padding: 2rem;
     display: none;
     border-radius: 2rem;
     border: 2px ridge rgba(100, 100, 100, 0.9);
     width: 43rem; height: 33rem;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 p {
@@ -39,11 +57,21 @@ ul li {
     color: rgba(2, 2, 2, 0.9);
     font-weight: 600;
     font-size: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.6rem;
+}
+
+ul li:hover {
+    border-radius: 2rem;
+    border: 2px ridge rgba(100, 100, 100, 0.9);
+    background-color: rgba(200, 255, 200, 0.9);
+    color: rgba(2, 2, 2, 0.9);
+    font-weight: 600;
+    font-size: 1rem;
+    transform: scale(1.1);
 }
 
 .randomize-button {
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     margin-bottom: 3rem;
     border-radius: 2rem;
     width: 10rem; height: 3rem;

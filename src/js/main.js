@@ -117,7 +117,7 @@ $(document).ready(function() {
     });
 
     let questionIndex = 0;
-
+    wrongEntries = 0;
 
     function displayRandomQuestion() {
         if (questionIndex < questions.length) {
@@ -135,28 +135,33 @@ $(document).ready(function() {
                 correctAnswered = true;
                 clickedAnswer.css("transform", "scale(1.12)")
                 if (clickedAnswer.text() === correctAnswer) {
-                    clickedAnswer.addClass("crossed-out"); 
-                    clickedAnswer.css("color", "rgba(200, 255, 200, 0.9)");
+                    clickedAnswer.addClass(".correct-input"); 
+                    clickedAnswer.css("background-color", "rgba(150, 255, 150, 0.9)");
+                    clickedAnswer.css("color", "rgba(10, 95, 10, 0.8)");
                     $("#randomize-button").prop("disabled", false);
+                    wrongEntries++;
                     correctAnswered = false;
                 } else {
-                    clickedAnswer.css("color", "rgba(255, 100, 100, 0.9)");
+                    clickedAnswer.css("background-color", "rgba(255, 100, 100, 0.6)");
+                    clickedAnswer.css("color", "rgba(2, 2, 2, 0.3)");
                     clickedAnswer.addClass("crossed-out");
-                    
                     correctAnswered = true;
                 }
             });
             questionIndex++;
             } else {
-                $("#question-text").text("No more questions.");
+                $("#question-text").text(`Try again for less wrong entries!`);
+                $(".entries").text(`${wrongEntries}`)
+                $(".entries").css("color", "rgba(255, 150, 150, 0.8)");
                 $("#answer-list").empty();
+                $("#randomize-button").prop("disabled", true);
             }
     }
     displayRandomQuestion();
 
     $(".randomize-button").click(displayRandomQuestion);
 
-$(document).ready(function() {
+
         var images = [
             'img-01.jpg',
             'img-02.jpg',
@@ -190,5 +195,4 @@ $(document).ready(function() {
     });
 });
 
-})
 
