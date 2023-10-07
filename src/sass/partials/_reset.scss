@@ -8,8 +8,11 @@ html, body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #101010;
-    color: rgba(255, 255, 255, 0.7);
+    background-image: url('https://images.unsplash.com/photo-1696240547240-af6ae0c64953?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: rgba(255, 80, 255, 0.7);
 }
 
 .quiz-container {
@@ -20,9 +23,12 @@ html, body {
 }
 
 p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color:#030303;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    background-color: purple;
+    background-color: rgba(255, 220, 255, 0.9);
 }
 
 ul {
