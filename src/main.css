@@ -1,5 +1,25 @@
+<<<<<<< HEAD
 .container {
   display: none;
+=======
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.custom-alert {
+  display: none;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1696240547240-af6ae0c64953?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: rgba(255, 80, 255, 0.7);
+>>>>>>> 175a26675493556da402dfd4bcd6e31905d59ef6
 }
 
 .quiz-container {
