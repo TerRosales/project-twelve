@@ -59,7 +59,7 @@ $(document).ready(function() {
             answer: ["Adding functionalities to websites",
                     "Assigning mark-up structure for our websites",
                     "Creating sitemaps and wireframes for our websites",
-                    "Managing style properties for our websites"],
+                    "Managing our websites's HTML element's style properties for our websites"],
             correctAnswer: "Managing our websites's HTML element's style properties for our websites",
             hint: `CSS stands for "Cascading Style Sheets".`
         },
@@ -102,22 +102,21 @@ $(document).ready(function() {
     ];
     
 
+    // Hide the custom alert when the "Next Question" button is clicked
+    $(".randomize-button").click(function() {
+        $(".custom-alert").hide();
+    });
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 [array[i], array[j]] = [array[j], array[i]];
             }
-        }
-
-
+    }
     shuffleArray(questions);
     questions.forEach(question => {
         shuffleArray(question.answer);
     });
-
     let questionIndex = 0;
-
-
     function displayRandomQuestion() {
         if (questionIndex < questions.length) {
             const currentQuestion = questions[questionIndex]; 
@@ -134,7 +133,7 @@ $(document).ready(function() {
                 correctAnswered = true;
                 if (clickedAnswer.text() === correctAnswer) {
                     clickedAnswer.addClass("crossed-out"); 
-                    alert("Correct!");
+                    alert("Correct! Click next to continue...");
                     $("#randomize-button").prop("disabled", false);
                     correctAnswered = false;
                 } else {
@@ -152,5 +151,6 @@ $(document).ready(function() {
     displayRandomQuestion();
 
     $(".randomize-button").click(displayRandomQuestion);
+    $(".quiz-container").slideDown();
 });
 
