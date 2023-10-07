@@ -245,15 +245,12 @@ $(document).ready(function() {
                     alert("Correct!");
                     $("#randomize-button").prop("disabled", false);
                     correctAnswered = false;
-                } else if (clickedAnswer.text() === !correctAnswer) {
+                } else {
                     clickedAnswer.addClass("crossed-out");
                     alert("Incorrect!");
-                    correctAnswered = false;
+                    correctAnswered = true;
                 }
-
-                
             });
-
             questionIndex++;
             } else {
                 $("#question-text").text("No more questions.");
