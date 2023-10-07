@@ -100,12 +100,6 @@ $(document).ready(function() {
             hint: "Also squeezes our content, making them adapt a smaller size when this property exceeds the content's size threshold"
         },
     ];
-    
-
-    // Hide the custom alert when the "Next Question" button is clicked
-    $(".randomize-button").click(function() {
-        $(".custom-alert").hide();
-    });
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
